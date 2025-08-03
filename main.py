@@ -24,12 +24,8 @@ full_names = stavroi.index.values
 unicode_surname_dict = {unidecode(sldr.split()[1]): sldr for sldr in full_names}
 
 # Duties dictionary creation (to match codenames with explanation)
-# TODO: αλλαζοντας το πανω οριο του range κρυβεις το ποσα νουμερα εχει η καθε υπηρεσια ΑΛΛΑ και παλι φαινεται η υπηρεσια..
-tae_dict = {f"ΤΑΕ{i}": f"ΤΑΕ {int(ceil(i/2))}ο νούμερο" for i in range(1,9)}
-spm_dict = {f"ΣΠΜ{i}{j}": f"Σ1 {i}ο νούμερο" for i in range(1,4) for j in ['Α', 'Β']}
-dek_dict = {f"Δ/Α{i}": f"Δεκανέας Αλλαγής {i}ο νούμερο" for i in range(1,3)}
-thal_dict = {f"Θ{i}": f"Θαλαμοφύλακας {i}ο νούμερο" for i in range(1,4)}
-DUTIES_DICT = tae_dict | spm_dict | dek_dict | thal_dict
+import get_duties
+DUTIES_DICT = get_duties.get_duties_dict()
 
 
 # For calendar.datetime.weekday
