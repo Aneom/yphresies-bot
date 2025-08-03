@@ -24,6 +24,8 @@ full_names = stavroi.index.values
 unicode_surname_dict = {unidecode(sldr.split()[1]): sldr for sldr in full_names}
 
 # Duties dictionary creation (to match codenames with explanation)
+# Here we execute the following function in order to get a dictionary that helps match codenames in Excel with user-interpretable output.
+# Because the DUTIES_DICT is a dictionary which is generated using dictionary comprehensions, it has to come from a function and not just an env var.
 import get_duties
 DUTIES_DICT = get_duties.get_duties_dict()
 
